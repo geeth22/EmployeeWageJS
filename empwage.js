@@ -1,4 +1,4 @@
-//Calculate Wages till a condition of total working hours or days is reached for a month
+//Refactor the Code using function
 
 //Constants
 let IS_PART_TIME = 1;
@@ -13,9 +13,7 @@ let totalEmpWage = 0;
 let totalWorkingDays = 0;
 let totalEmpHrs = 0;
 
-while(totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays <= MAX_WORKING_DAYS) {
-    totalWorkingDays++;
-  let empCheck = Math.floor(Math.random() * 3);
+function getWorkHours(empCheck) {
   switch (empCheck) {
     case IS_PART_TIME:
       empHrs = 4;
@@ -26,7 +24,18 @@ while(totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays <= MAX_WORKING_DAYS) {
     default:
       empHrs = 0;
   }
+  return empHrs;
+}
+
+while (
+  totalEmpHrs <= MAX_HRS_IN_MONTH &&
+  totalWorkingDays <= MAX_WORKING_DAYS
+) {
+  totalWorkingDays++;
+  let empCheck = Math.floor(Math.random() * 3);
+  empHrs = getWorkHours(empCheck);
   totalEmpHrs += empHrs;
 }
+
 totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
 console.log("Employee wage is: " + totalEmpWage);
