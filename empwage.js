@@ -1,5 +1,3 @@
-//solving using switch case statement
-
 //Calculating employee wages for month
 
 //Constants
@@ -28,4 +26,4 @@ for (let day = 0; day < NUM_OF_WORKING_DAYS; day++) {
   empWage = empHrs * EMP_RATE_PER_HOUR;
   totalEmpWage += empWage;
 }
-console.log("Employee wage for month is: " + totalEmpWage);
+console.log("Employee wage is: " + totalEmpWage);
