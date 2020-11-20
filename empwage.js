@@ -1,4 +1,4 @@
-//Add Part time Employee & Wage
+//solving using switch case statement
 
 //Constants
 let IS_PART_TIME = 1;
